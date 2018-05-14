@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>SignalR MoveShape Demo</title>
+	<meta charset="utf-8" />
+    <link href="../Scripts/kendo-ui/2016.2.504/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="../Scripts/kendo-ui/2016.2.504/styles/kendo.spirit-blue-opal.css" rel="stylesheet" />
+
+    <script src="../Scripts/jquery/jquery-1.12.4.min.js"></script>
+    <script src="../Scripts/jquery/jquery.signalR-2.2.3.min.js"></script>
+    <script src="../Scripts/jquery/jquery-ui-1.12.1.min.js"></script>
+    <script src="../signalr/hubs"></script>
+    <script src="http://localhost:8632/signalr/hubs"></script>
+    <script src="../Scripts/angular/1.5.3/angular.min.js"></script>
+    <script src="../Scripts/jszip/2.6.0/jszip.min.js"></script>
+    <script src="../Scripts/angular/1.5.3/angular-cookies.min.js"></script>
+    <script src="../Scripts/angular/1.5.3/angular-route.min.js"></script>
+    <script src="../Scripts/angular/1.5.3/angular-animate.min.js"></script>
+    <script src="../Scripts/angular-loading-bar/0.9.0/loading-bar.min.js"></script>
+    <script src="../Scripts/kendo-ui/2016.2.504/js/kendo.all.min.js"></script>
+
+    <script src="./scripts/liveTrading.js"></script>
+    <script src="./scripts/liveTrading.controller.js"></script>
+</head>
+<body>
+    <main ng-app="liveTradingApp" ng-controller="LiveTradingController as vm">
+        
+        <h1 style="color:dodgerblue">As of date: {{vm.AsOfDate}}</h1>
+        <!--<div id="shape"><img src="../demo.jpg" style="width:100px;height:200px;" /></div>--> 
+        <div id="tradeGrid" kendo-grid="vm.tradeGrid" k-data-source="vm.tradeDataSource" k-options="vm.tradeOptions"></div>
+        <button ng-click="vm.callTradeService()">Click</button>
+    </main>
+</body>
+</html>
+<script>
+        //$(function () {
+        //    var moveShapeHub = $.connection.moveShapeHub,//MoveShapeHub.cs 此处开头字母要小写
+        //    $shape = $("#shape"), 
+
+        //    messageFrequency = 10,
+        //    updateRate = 1000 / messageFrequency,
+
+        //    shapeModel = {        
+        //        left: 0,
+        //        top: 0
+        //    };
+
+        //    //update client
+        //    moveShapeHub.client.updateShape = function (model) {
+        //        shapeModel = model;
+        //        $shape.css({ left: model.left, top: model.top });
+        //        //$shape.animate(shapeModel, { duration: updateRate, queue: false });
+        //    };
+
+        //    moveShapeHub.client.sendMessage = function (message) {
+        //        console.log(message);
+        //    };
+
+        //    //Start
+        //    $.connection.hub.start().done(function () {
+        //        moveShapeHub.server.sendMqMessage("123");
+
+        //        //$shape.draggable({
+        //        //    drag: function () {
+        //        //        //shapeModel = $shape.offset();
+        //        //        moveShapeHub.server.sendMqMessage("123");
+        //        //    }
+        //        //});
+        //        //setInterval(updateServerModel, updateRate);
+        //    });
+        //});
+</script> 

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="./Scripts/jquery/jquery-1.12.4.min.js"></script>
+    <script src="./Scripts/jquery/jquery.signalR-2.2.3.min.js"></script>
+    <script src="./Scripts/jquery/jquery-ui-1.12.1.min.js"></script>
+    <script src="./signalr/js"></script>
+</head>
+<body>
+    This is index page
+</body>
+</html>
+<!--<script>
+    var moveShapeHub = $.connection.moveShapeHub;//MoveShapeHub.cs 此处开头字母要小写
+    moveShapeHub.client.sendMessage = function (message) {
+        console.log(message);
+    };
+    //Start
+    $.connection.hub.start().done(function () {
+        ///TODO: change it to promise
+        moveShapeHub.server.sendMqMessage("Start tracking trades");
+    });
+</script>-->
